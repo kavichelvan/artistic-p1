@@ -1,0 +1,33 @@
+Private Sub CreateFile_Click()
+
+    Dim tot_rows_in_sheet1 As Integer
+    tot_rows_in_sheet1 = Sheet1.Cells(2,2)
+
+    Dim tot_rows_in_sheet2 As Integer
+    tot_rows_in_sheet2 = Sheet1.Cells(2,3)
+
+    Dim generated As Worksheet
+    Set generated = Worksheet.Add
+
+    Sheet3.Activate
+    Sheet2.Activate
+
+    For i=2 To (tot_rows_in_sheet1 +1)
+        For J=2 To (tot_rows_in_sheet2 + 1)
+            If i=2 and J =2 Then
+                generated.Cells(1,1).Value ="S_No"
+                generated.Cells(1,2).Value ="Request_type"
+            End If
+
+            For k=1 To 18
+                If k=1 Then 
+                    generated.Cells(((i-2)* tot_rows_in_sheet2) + J,k).Value = count
+                ElseIf k=2 Then
+                    generated.Cells(((i-2)* tot_rows_in_sheet2) + J,k).Value = "Internal"    
+                ElseIf k=3 Then
+                    generated.Cells(((i-2)* tot_rows_in_sheet2) + J,k).Value = "New"
+                End If
+            Next K
+        Next J
+    Next i 
+End Sub   

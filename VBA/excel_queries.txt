@@ -1,0 +1,6 @@
+=LEFT(E2,LEN(E2)-1)
+=RIGHT(K2, LEN(K2)-1)
+
+=CONCATENATE("'",A1,"'",",")
+
+=Vlookup(A2,$B$2:$B$5,1,FALSE)
