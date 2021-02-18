@@ -1,0 +1,9 @@
+Search query
+--------------
+index="*aws*" | spath event | search event="/730" | spath request_id | search request_id = "app-api:appmaster"
+
+index="*aws*" | spath event | search (event !="*200*") AND (event !="*201*") AND (event !="*304*") | stats count as Total
+
+index="*aws*" | spath event | rex field=event "^(?<call>user-info)(?<skip>.*CN=)(?<id>.*[X]\d{6})" | eventstats count as Total | stats count as cnt by id,tot | table cnt
+
+index="*aws*" | spath event | rex field=event "^(?<call>user-info)(?<skip>.*CN=)(?<id>.*[X]\d{6})" | stats value(id) as ids | table ids | rename ids as users_actual_id

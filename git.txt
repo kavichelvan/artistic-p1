@@ -1,0 +1,48 @@
+refer: https://github.com/kavichelvan/git-repo-online-tutorial/blob/master/commands.txt
+
+git clone https://github.com/kavichelvan/git-repo-online-tutorial.git
+----------------------------------------------------------------------
+1) git reset head^
+2) git status
+3) git stash
+4) git checkout path1
+5) git pull
+6) git checkout pk/newbranch
+7) git rebase path1
+8) git stash apply
+9) check changes (stage changes)
+10) git commit -m "v3.2 fix"
+11) git push origin -f
+12) check your branch and PR in git
+
+v3.0.0 release
+-------------
+1) create local % git branch from path0
+2) PR to path0 (path0 affected)
+3) sync path0 to v3.0.0
+4) sync v3.0.0 to path1
+
+git clone for tags
+------------------
+git clone --branch v2.8.0 url.git
+
+git checkout path0 -> to point branch path0
+git fetch origin -> take the latest
+git pull -> get the latest code origin (path0)
+
+git stash -> stash your current changes for temp purpose when u do rebase or rebase head
+git stash list -> list out all the stashes
+git stash apply -> apply your last stash changes
+git stash apply@{2} -> apply a particular stash
+git stash pop -> apply your last stash changes and delete it
+git stash clear -> delete all your stashes
+
+git pull -> rebase your code with mentioned branch
+git rebase -- continue -> if conflicts occurs while rebase, resolve it manually and to complete the rebase
+git rebase -- abort -> abort your rebase if you don't want to apply changes
+
+git reset head^ -> atomic commit. to make a single ccommit. It will revoke the last commit from repository
+(to reset, undo ur chanes and sync again in your local branch)
+
+git push origin -> push your latest changes
+git push origin - f -> forcce push your latest changes

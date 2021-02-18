@@ -1,0 +1,18 @@
+Chrome web tools
+----------------
+x-art-auth
+x-art-header
+
+.npmrc file
+powershell : $ENV:NODE_ENV="workstation"
+node : set NODE_ENV=workstation
+
+npm install
+npm i
+npm i -dev
+npm run npm-build
+
+app : npm-start
+api : npm run startnotest
+
+.eslintrc.js
