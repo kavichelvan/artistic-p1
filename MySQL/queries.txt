@@ -1,0 +1,21 @@
+USE dev;
+
+select 
+    'S_No',
+    case    
+        when a.userId like '%@%'
+            Then 'External'
+        Else 'Internal'
+    ,a.userId as User_ID,
+    ,c.comid as com_id,
+    ,'New' as Request_definition
+From user a,
+     ucsp b,
+     client c
+where
+    a.userId = b.userId
+    AND b.comid = c.comid
+order by userId
+
+select * from dev.client where comid="3293";
+insert into dev.client(client_id, comid, com_name, uOn) values(1,2332,"manchester united", now());

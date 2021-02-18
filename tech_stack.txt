@@ -1,0 +1,22 @@
+octodeploy
+udeploy
+CICD pipeline (Continuos Integration Continuos Deployment)
+node js
+container code
+AWS lamda functions
+Appdynamics
+
+UI: node js + react + Birst (BI tool) + backend(appdata and userdata)
+
+Tableau reporting tool + MSSQL
+
+JIRA
+Openair timesheet
+Net group add
+git
+mongodb
+Postman
+Exasol
+sonarqube
+confluence
+shared path
