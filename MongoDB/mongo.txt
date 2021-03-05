@@ -175,3 +175,37 @@ db.book.find().forEach(function (mapping) {
         }
     }
 )
+
+db.books.updateMany(
+    {'books.author.id: {$in:[23,24]}},
+    {
+        $currentDate: {"updateOn": true},
+        $push:{'books.$[].author.&[authorFltr].description': 
+        {
+            "id: 1,
+            "name": "paramakudi",
+            "genre": "thriller",
+            "details": [ 
+                {
+                    "desc": "good author"
+                }
+            ]
+            ,
+            "id: 1,
+            "name": "magudi",
+            "genre": "crime",
+            "details": [ 
+                {
+                    "desc": "good book"
+                }
+            ]    
+        }
+        }
+    },
+    {
+        arrayFilters: [
+            {'books.author.id': {$in:[23,24]}}
+        ],
+        multi: true
+    }
+);
