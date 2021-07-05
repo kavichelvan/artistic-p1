@@ -1,3 +1,5 @@
+test local git
+------------
 load(exporter.js)
 
 mongoimport --db local --collection user --file C:\Users:\mondodb\user_dump.json --jsonArray;
